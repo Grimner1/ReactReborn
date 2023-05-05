@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 
 const ConnectionStatus = () => {
-  const [status, setStatus] = useState({ connection: "Online", stat: false });
+  const [status, setStatus] = useState(true);
 
   useEffect(() => {
     const changeStatusOnline = () => {
-      setStatus({ connection: "Online", stat: false });
+      setStatus(true);
     };
 
     const changeStatusOffline = () => {
-      setStatus({ connection: "Offline", stat: true });
+      setStatus(false);
     };
 
     window.addEventListener("online", changeStatusOnline);
@@ -21,11 +21,9 @@ const ConnectionStatus = () => {
     );
   }, []);
 
-  //   console.log(1);
-
   return (
-    <div className={status.stat ? "status status_offline" : "status"}>
-      {status.connection}
+    <div className={status ? "status" : "status status_offline"}>
+      {status ? "Online" : "Offline"}
     </div>
   );
 };
