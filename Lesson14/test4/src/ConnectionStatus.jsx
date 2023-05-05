@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 const ConnectionStatus = () => {
   const [status, setStatus] = useState({ connection: "Online", stat: false });
 
-  setStatus;
-
   useEffect(() => {
     const changeStatusOnline = () => {
       setStatus({ connection: "Online", stat: false });
