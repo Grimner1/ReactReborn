@@ -17,7 +17,7 @@ const Clock = ({ location, offset }) => {
   return (
     <div className="clock">
       <div className="clock__location">
-        {location} : {offset}
+        {location}
       </div>
       <div className="clock__time">
         {moment(time).utcOffset(offset).format("HH:mm:ss A")}
